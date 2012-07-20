@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.010;
+use 5.010_001;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -28,9 +28,10 @@ my %WriteMakefileArgs = (
   "NAME" => "Pod::Elemental::MakeSelector",
   "PREREQ_PM" => {
     "Carp" => 0,
+    "Pod::Elemental" => "0.102360",
     "Sub::Exporter" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }

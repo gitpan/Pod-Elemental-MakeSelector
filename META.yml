@@ -20,11 +20,12 @@ meta-spec:
 name: Pod-Elemental-MakeSelector
 requires:
   Carp: 0
+  Pod::Elemental: 0.102360
   Sub::Exporter: 0
-  perl: 5.010
+  perl: 5.010_001
 resources:
   repository: git://github.com/madsen/pod-elemental-makeselector.git
-version: 0.01
+version: 0.02
 x_Dist_Zilla:
   plugins:
     -
@@ -98,7 +99,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::TemplateCJM
       name: CJM/TemplateCJM
-      version: 4.09
+      version: 4.10
     -
       class: Dist::Zilla::Plugin::Repository
       name: CJM/Repository
@@ -138,6 +139,14 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: AutoPrereqs
+      version: 4.300020
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: requires
+      name: Prereqs
       version: 4.300020
     -
       class: Dist::Zilla::Plugin::FinderCode

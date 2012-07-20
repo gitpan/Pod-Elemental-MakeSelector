@@ -1,4 +1,4 @@
-Pod-Elemental-MakeSelector version 0.01, released July 14, 2012
+Pod-Elemental-MakeSelector version 0.02, released July 20, 2012
 
 
 This module provides an alternative to Pod::Elemental::Selectors.  It
@@ -21,19 +21,23 @@ To install this module, run the following commands:
 
 DEPENDENCIES
 
-  Package        Minimum Version
-  -------------- ---------------
-  perl            5.010
-  Carp            
+  Package         Minimum Version
+  --------------- ---------------
+  perl             5.10.1
+  Carp             
+  Pod::Elemental   0.102360
   Sub::Exporter
 
 
 
 CHANGES
-    Here's what's new in version 0.01 of Pod-Elemental-MakeSelector:
+    Here's what's new in version 0.02 of Pod-Elemental-MakeSelector:
     (See the file "Changes" for the full revision history.)
 
-	- Initial release
+	- Require Perl 5.10.1, as 5.10.0 doesn't support matching
+	  against an arrayref of regexes
+	- List Pod::Elemental as a dependency, even though we don't
+	  use it directly
 
 
 
