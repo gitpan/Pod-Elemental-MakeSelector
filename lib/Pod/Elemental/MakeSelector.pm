@@ -21,8 +21,8 @@ use 5.010_001;                  # smart-matching is broken in 5.10.0
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
-# This file is part of Pod-Elemental-MakeSelector 0.02 (July 20, 2012)
+our $VERSION = '0.03';
+# This file is part of Pod-Elemental-MakeSelector 0.03 (March 1, 2014)
 
 use Carp qw(croak);
 
@@ -30,6 +30,9 @@ use Sub::Exporter -setup => {
   exports => [ qw(make_selector) ],
   groups  => { default => [ qw(make_selector) ]},
 };
+
+# In Perl 5.18, smartmatch emits a warning
+no if $] >= 5.018, warnings => "experimental::smartmatch";
 
 #=====================================================================
 sub add_value
@@ -197,8 +200,8 @@ sub make_selector
 
 1;
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -207,8 +210,8 @@ Pod::Elemental::MakeSelector - Build complex selectors as a single sub
 
 =head1 VERSION
 
-This document describes version 0.02 of
-Pod::Elemental::MakeSelector, released July 20, 2012.
+This document describes version 0.03 of
+Pod::Elemental::MakeSelector, released March 1, 2014.
 
 =head1 SYNOPSIS
 
@@ -344,10 +347,9 @@ and may be cloned from L<git://github.com/madsen/pod-elemental-makeselector.git>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Christopher J. Madsen.
+This software is copyright (c) 2014 by Christopher J. Madsen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
